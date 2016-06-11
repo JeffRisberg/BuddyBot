@@ -37,8 +37,9 @@ a {
 
 .navbar-brand {
 	background-color: #f49866;
-	color: #9b9bf5 !important;
+	color: #bff !important;
 	text-shadow: 1px 1px black;
+    font-size: 24px;
 }
 
 .navbar-nav {
@@ -54,9 +55,15 @@ a {
 }
 
 .bottombar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
 	margin-top: 10px;
 	background-color: #f49866;
 	color: #bff !important;
+    border-top: solid black 1px;
 }
 
 .robot-big {
