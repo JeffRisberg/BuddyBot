@@ -1,0 +1,18 @@
+<div class="container">
+
+    <h2>Please enter your profile</h2>
+
+    <form action="/analyze" method="post">
+
+        <p>Tell us about yourself:</p>
+        <textarea name="text" id="inputText" rows="16" cols="90"></textarea>
+        <br/>
+
+        <input type="hidden" name="source_type" value="text"/>
+        <input type="hidden" name="accept_language" value="en"/>
+        <input type="hidden" name="include_raw" value="false"/>
+
+        <input type="submit" value="OK"/>
+    </form>
+
+</div>

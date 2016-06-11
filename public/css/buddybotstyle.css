@@ -53,6 +53,11 @@ a {
 	text-shadow: 1px 1px black;
 }
 
+.bottombar {
+	background-color: #f49866;
+	color: #bff !important;
+}
+
 .robot-big {
 	font-family: 'Orbitron', sans-serif;
 	color: #00FF40; /*lime green*/

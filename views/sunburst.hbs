@@ -1,0 +1,28 @@
+<div class="container">
+    <div>
+        <h2 class="h2">
+            Sunburst Title
+        </h2>
+
+        <div id="sunburstChart"></div>
+
+        <p>
+            <a class="base--a" href='/'>
+                &lt; Back
+            </a>
+        </p>
+
+    </div>
+</div>
+
+<script src="/js/vendors/jquery-2.2.0.min.js"></script>
+<script src="/js/vendors/d3.min.js"></script>
+<script src="/js/components/personality-sunburst-chart.standalone.min.js"></script>
+
+<script>
+    var profile = "sunburst.profile";
+    var imageUrl = "to_be_filled_in";
+    var chart = new PersonalitySunburstChart('sunburstChart');
+    chart.show(profile, imageUrl);
+</script>
+

@@ -1,0 +1,26 @@
+<div class="container">
+
+    <p class="robot-big">
+        <img src="images/bot.png" alt="Buddy Bot" height="65" width="135"/>
+        Personality analyzed!
+    </p>
+
+    <p>Word Count: {{word_count}}</p>
+
+    <p>Word Count Message: {{word_count_message}}</p>
+
+    <h4>Tree:</h4>
+
+    {{#each tree.children}}
+        <div style="margin-left: 20px">
+            {{name}}
+            <div style="margin-left: 20px">
+                {{#each children}}
+                    {{name}}:
+                    {{percentage}}
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+
+</div>

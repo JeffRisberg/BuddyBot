@@ -30,6 +30,7 @@ var
 var
   personality_insights = watson.personality_insights(credentials),
   getProfile = function (parameters) {
+    console.log(parameters);
     return to_promise(function(callback) { personality_insights.profile(sanitize(parameters), callback)});
   };
 
