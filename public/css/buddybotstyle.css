@@ -1,54 +1,61 @@
 body {
-	background-color: #ffb187;
+	/*background-color: #ffb187;*/ /* lighter coral*/
+	background-color: #9b9bf5; /*lavender */
 }
 
 h1 {
 	color: #bff;
 	text-shadow: 2px 2px #f49866;
 }
+
+a {
+	color: #ffb187;
+	text-shadow: 1px 1px #f49866;
+}
+
 .list-unstyled {
 	padding-top: 10px;
 }
 
 .navbar{
 	background-color: #f49866;
-	color: #0FF !important;
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .navbar-toggle {
 	background-color: #f49866;
-	color: #0FF !important;
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .navbar-collapse {
 	background-color: #f49866;
-	color: #0FF !important;
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .navbar-brand {
 	background-color: #f49866;
-	color: #0FF !important;
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .navbar-nav {
 	background-color: #f49866;
-	color: #0FF !important;
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .nav {
-	background-color: #f49866;
-	color: #0FF !important;
+	background-color: #f49866; /*darker coral*/
+	color: #9b9bf5 !important;
 	text-shadow: 1px 1px black;
 }
 
 .robot-big {
 	font-family: 'Orbitron', sans-serif;
-	color: #00FF40;
+	color: #00FF40; /*lime green*/
 	text-shadow: 2px 2px black;
 	font-size: 48px;
 	padding-top: 20px;
@@ -61,3 +68,31 @@ h1 {
 	padding-top: 20px;
 }
 
+.boxes {
+	background-color: #ffb187;
+}
+
+.btn-buddy {
+  -webkit-border-radius: 27;
+  -moz-border-radius: 27;
+  border-radius: 27px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00FF40;
+  font-size: 20px;
+  background-image: -webkit-linear-gradient(top, #ffb187, #f49866);
+  background-image: -moz-linear-gradient(top, #ffb187, #f49866);
+  background-image: -ms-linear-gradient(top, #ffb187, #f49866);
+  background-image: -o-linear-gradient(top, #ffb187, #f49866);
+  background-image: linear-gradient(to bottom, #ffb187, #f49866);
+  padding: 10px 20px 10px 20px;
+  border: dotted #00FF40 4px;
+  text-decoration: none;
+}
+
+.btn-buddy:hover {
+  background: #9b9bf5;
+  font-family: 'Orbitron', sans-serif;
+  color: #00FF40;
+  font-size: 20px;
+  text-decoration: none;
+}
