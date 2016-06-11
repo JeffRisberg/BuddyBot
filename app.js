@@ -16,8 +16,11 @@
 
 'use strict';
 
-var express = require('express'),
-    app     = express();
+var express = require('express');
+var path = require('path');
+var expressHbs = require('express-handlebars');
+
+var app = express();
 
 // Bootstrap application settings
 require('./config/express')(app);
