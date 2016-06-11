@@ -10,13 +10,24 @@ router.post('/', function (req, res) {
     var getProfile = require('../../helpers/personality-insights').profile;
 
     getProfile(req.body)
-        .then(function (watsonResults) {
-            console.log(watsonResults);
-            res.render('results', watsonResults);
+        .then(function (watsonResult) {
+            console.log(watsonResult);
+
+            var Profile = require('../../models/profile');
+
+            var profile = new Profile({username: "analyzeduser", "email": "abc@gmail.com",
+                watsonResult: JSON.stringify(watsonResult)});
+            console.log(profile);
+            profile.save();
+
+            res.render('results', watsonResult);
         })
-        .catch(function (watsonResults) {
-            console.log(watsonResults);
-            res.render('results', watsonResults);
+        .catch(function (watsonResult) {
+            console.log(watsonResult);
+
+            // don't store into Mongo, since it is not a valid result
+
+            res.render('results', watsonResult);
         });
 });
 

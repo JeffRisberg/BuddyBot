@@ -23,6 +23,8 @@ var hbs = expressHbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+require('./config/database')(process.env.DATABASE_URL || 'mongodb://localhost/buddybot');
+
 require('./router')(app);
 
 // error-handler settings
