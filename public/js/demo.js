@@ -576,39 +576,6 @@ $(document).ready(function () {
     return obj1.score - obj2.score;
   }
 
-  function preloadSampleTexts(callback) {
-    var shared = { done : 0 };
-    SAMPLE_TEXTS.forEach(function(name) {
-      $Q.get('data/text/' + name + '.txt')
-        .then(function (text) {
-          shared.done = shared.done + 1;
-          textCache[name] = text;
-
-          if (shared.done == SAMPLE_TEXTS.length && callback) {
-            callback();
-          }
-        })
-        .done();
-    });
-  }
-
-  function loadSampleText(name) {
-    if (textCache[name]) {
-      setTextSample(textCache[name], true);
-      updateWordCount();
-    } else {
-      $Q.get('data/text/' + name + '.txt')
-        .then(function (text) {
-          setTextSample(text, true);
-          textCache[name] = text;
-        })
-        .then(function() {
-          updateWordCount();
-        })
-        .done();
-    }
-  }
-
   function showHiddenLanguages() {
     var enableLang = {
       'ar' : function () {
@@ -655,9 +622,6 @@ $(document).ready(function () {
     $('input[name="text-sample"]:first').attr('checked', true);
     globalState.selectedTwitterUser = $('input[name="twitter"]:first').val();
     showHiddenLanguages();
-    preloadSampleTexts(function () {
-      loadSampleText(globalState.selectedSample);
-    });
     registerHandlers();
     $inputTextArea.addClass('orientation', 'left-to-right');
 
