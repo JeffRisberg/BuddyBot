@@ -54,6 +54,7 @@ a {
 }
 
 .bottombar {
+	margin-top: 10px;
 	background-color: #f49866;
 	color: #bff !important;
 }
