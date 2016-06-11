@@ -10,7 +10,17 @@ var app = express();
 require('./config/express')(app);
 
 // configure the template engine and make it the current view rendering engine
-app.engine('hbs', expressHbs({extname: 'hbs', defaultLayout: 'main.hbs'}));
+var hbs = expressHbs.create({
+    extname: 'hbs',
+    defaultLayout: 'main.hbs',
+    helpers: {
+        formatPercentage: function (val) {
+            return Math.round(100 * val);
+        }
+    }
+});
+
+app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
 require('./router')(app);
