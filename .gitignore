@@ -6,3 +6,6 @@ npm-debug.log
 .env.js
 .env
 coverage
+
+.idea/workspace.xml
+.idea/tasks.xml
