@@ -24,5 +24,10 @@
 
     <p>Word Count Message: {{word_count_message}}</p>
 
-    <a href="/buddies" class="btn btn-buddy" style="text-shadow: none">Show me some buddies!</a>
+    <form action="/buddies" method="post">
+        <input type="hidden" name="email" value="{{email}}" />
+        <input type="hidden" name="username" value="{{username}}" />
+
+        <input type="submit" class="btn btn-buddy" style="text-shadow: none" value="Show me some buddies!"/>
+    </form>
 </div>

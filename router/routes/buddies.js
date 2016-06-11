@@ -5,13 +5,26 @@ var express = require('express'),
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
+router.post('/', function (req, res) {
+    var email = req.body.email;
+    var username = req.body.username;
 
-    // To be changed!!!
+    var Profile = require('../../models/profile');
+
     var buddies = [];
-    buddies.push({name: 'Abraham Lincoln', id: 4});
-    buddies.push({name: 'Mahatma Gandhi', id: 6});
-    buddies.push({name: 'John Lennon', id: 7});
+
+    Profile.find({}, function (error, profiles) {
+        profiles.forEach(function (profile) {
+
+            if (profile.email != email && profile.username != username) {
+                buddies.push({email: profile.email, username: profile.username});
+            }
+        })
+    })
+
+    //buddies.push({name: 'Abraham Lincoln', id: 4});
+    //buddies.push({name: 'Mahatma Gandhi', id: 6});
+    //buddies.push({name: 'John Lennon', id: 7});
 
     res.render("buddies", {buddies: buddies});
 });
