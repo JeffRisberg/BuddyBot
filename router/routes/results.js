@@ -6,6 +6,8 @@ var express = require('express'),
 var router = express.Router();
 
 router.post('/', function (req, res) {
+    var email = req.body.email;
+    var username = req.body.username;
 
     var getProfile = require('../../helpers/personality-insights').profile;
 
@@ -15,9 +17,11 @@ router.post('/', function (req, res) {
 
             var Profile = require('../../models/profile');
 
-            var profile = new Profile({username: "analyzeduser", "email": "abc@gmail.com",
-                watsonResult: JSON.stringify(watsonResult)});
-            console.log(profile);
+            var profile = new Profile({
+                "email": email,
+                username: username,
+                watsonResult: JSON.stringify(watsonResult)
+            });
             profile.save();
 
             res.render('results', watsonResult);

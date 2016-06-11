@@ -11,6 +11,8 @@ module.exports = function (app) {
   app.use('/', require('./routes/index'));
   app.use('/profile', require('./routes/profile'));
   app.use('/analyze', require('./routes/results'));
+  app.use('/buddies', require('./routes/buddies'));
+
   app.use('/sunburst', require('./routes/sunburst'));
 
 };

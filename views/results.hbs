@@ -5,12 +5,6 @@
         Personality analyzed!
     </p>
 
-    <p>Word Count: {{word_count}}</p>
-
-    <p>Word Count Message: {{word_count_message}}</p>
-
-    <h4>Tree:</h4>
-
     {{#each tree.children}}
         <div style="margin-left: 20px">
             {{name}}
@@ -28,4 +22,7 @@
         </div>
     {{/each}}
 
+    <p>Word Count Message: {{word_count_message}}</p>
+
+    <a href="/buddies" class="btn btn-default" style="text-shadow: none">Show me some buddies!</a>
 </div>

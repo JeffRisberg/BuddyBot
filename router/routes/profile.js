@@ -5,8 +5,11 @@ var express = require('express'),
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
-  res.render('profile', {});
+router.post('/', function (req, res) {
+    var email = req.body.email;
+    var username = req.body.username;
+
+    res.render('profile', {email: email, username: username});
 });
 
 module.exports = router;
