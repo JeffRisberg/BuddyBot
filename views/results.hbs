@@ -5,7 +5,7 @@
         Personality analyzed!
     </p>
 
-    {{#each tree.children}}
+    {{#each watsonResult.tree.children}}
         <div style="margin-left: 20px">
             {{name}}
             <div style="margin-left: 20px">
@@ -22,51 +22,48 @@
         </div>
     {{/each}}
 
-    <p>Word Count Message: {{word_count_message}}</p>
+    <p class="robot-small">You have fed {{watsonResult.word_count}} words to the Buddy-Matic Analyze-o-Tron 9000</p>
 
-    <a href="/buddies" class="btn btn-default" style="text-shadow: none">Show me some buddies!</a>
-     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <canvas id="myChart" class="buddychart"> </canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var pieData = [
+       {
+          value: 25,
+          label: 'Java',
+          color: '#811BD6'
+       },
+       {
+          value: 10,
+          label: 'Scala',
+          color: '#9CBABA'
+       },
+       {
+          value: 30,
+          label: 'PHP',
+          color: '#D18177'
+       },
+       {
+          value : 35,
+          label: 'HTML',
+          color: '#6AE128'
+       }
+    ];
 
+    var skillsChart = new Chart(ctx).Pie(pieData, {
+      pointDotRadius: 10,
+      bezierCurve: false,
+      scaleShowVerticalLines: false,
+      scaleGridLineColor: 'black'
+    });
+    </script>
 
+    <form action="/buddies" method="post">
+        <input type="hidden" name="email" value="{{email}}" />
+        <input type="hidden" name="username" value="{{username}}" />
 
-
-
-<canvas id="myChart" class="buddychart"> </canvas>
-<script>
-var ctx = document.getElementById("myChart").getContext('2d');
-var pieData = [
-   {
-      value: 25,
-      label: 'Java',
-      color: '#811BD6'
-   },
-   {
-      value: 10,
-      label: 'Scala',
-      color: '#9CBABA'
-   },
-   {
-      value: 30,
-      label: 'PHP',
-      color: '#D18177'
-   },
-   {
-      value : 35,
-      label: 'HTML',
-      color: '#6AE128'
-   }
-];
-
-var skillsChart = new Chart(ctx).Pie(pieData, {
-  pointDotRadius: 10,
-  bezierCurve: false,
-  scaleShowVerticalLines: false,
-  scaleGridLineColor: 'black'
-});
-</script>
-
-
-
+        <input type="submit" class="btn btn-buddy" style="text-shadow: none" value="Show me some buddies!"/>
+    </form>
 </div>

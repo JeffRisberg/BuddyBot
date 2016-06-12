@@ -1,15 +1,17 @@
 <div class="container">
 
-    <p class="robot-big">
+    <p class="robot-med">
         <img src="images/bot.png" alt="Buddy Bot" height="65" width="135"/>
-        Here are some buddies for you!
+        Hooray!!!
+        <br/>
+        I found you some buddies!
     </p>
 
     {{#each buddies}}
-        <div>
-        <p><input type="checkbox" /> {{name}}</p>
+        <div class="robot-small">
+        <p><input type="checkbox" /> {{profile.username}} (Similarity: {{formatPercentage similarity}}%)</p>
         </div>
     {{/each}}
 
-    <p><button class="btn btn-primary">Contact</button></p>
+    <p><button class="btn btn-buddy">Contact</button></p>
 </div>

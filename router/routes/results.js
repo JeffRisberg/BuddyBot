@@ -18,20 +18,20 @@ router.post('/', function (req, res) {
             var Profile = require('../../models/profile');
 
             var profile = new Profile({
-                "email": email,
+                email: email,
                 username: username,
                 watsonResult: JSON.stringify(watsonResult)
             });
             profile.save();
 
-            res.render('results', watsonResult);
+            res.render('results', {email: email, username: username, watsonResult: watsonResult});
         })
         .catch(function (watsonResult) {
             console.log(watsonResult);
 
             // don't store into Mongo, since it is not a valid result
 
-            res.render('results', watsonResult);
+            res.render('results', {email: email, username: username, watsonResult: watsonResult});
         });
 });
 
