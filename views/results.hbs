@@ -13,7 +13,8 @@
                     {{name}}:
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="2"
-                             aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{formatPercentage percentage}}%;">
+                             aria-valuemin="0" aria-valuemax="100"
+                             style="min-width: 2em; width: {{formatPercentage percentage}}%;">
                             {{formatPercentage percentage}}%
                         </div>
                     </div>
@@ -26,43 +27,48 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
-    <canvas id="myChart" class="buddychart"> </canvas>
+    <canvas id="myChart" class="buddychart"></canvas>
     <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var pieData = [
-       {
-          value: 25,
-          label: 'Java',
-          color: '#811BD6'
-       },
-       {
-          value: 10,
-          label: 'Scala',
-          color: '#9CBABA'
-       },
-       {
-          value: 30,
-          label: 'PHP',
-          color: '#D18177'
-       },
-       {
-          value : 35,
-          label: 'HTML',
-          color: '#6AE128'
-       }
-    ];
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var pieData = [
+            {
+                value: {{trait0}},
+                label: 'Openness',
+                color: '#811BD6'
+            },
+            {
+                value: {{trait1}},
+                label: 'Conscientiousness',
+                color: '#9CBABA'
+            },
+            {
+                value: {{trait2}},
+                label: 'Extraversion',
+                color: '#D18177'
+            },
+            {
+                value: {{trait3}},
+                label: 'Emotional Range',
+                color: '#6AE128'
+            },
+            {
+                value: {{trait4}},
+                label: 'Agreeableness',
+                color: '#3A4188'
+            }
+        ];
 
-    var skillsChart = new Chart(ctx).Pie(pieData, {
-      pointDotRadius: 10,
-      bezierCurve: false,
-      scaleShowVerticalLines: false,
-      scaleGridLineColor: 'black'
-    });
+        var skillsChart = new Chart(ctx).Pie(pieData, {
+            pointDotRadius: 10,
+            bezierCurve: false,
+            scaleShowVerticalLines: false,
+            scaleGridLineColor: 'black'
+        });
     </script>
 
     <form action="/buddies" method="post">
-        <input type="hidden" name="email" value="{{email}}" />
-        <input type="hidden" name="username" value="{{username}}" />
+        <input type="hidden" name="email" value="{{email}}"/>
+        <input type="hidden" name="username" value="{{username}}"/>
 
         <input type="submit" class="btn btn-buddy" style="text-shadow: none" value="Show me some buddies!"/>
     </form>
