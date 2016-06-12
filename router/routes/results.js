@@ -25,6 +25,7 @@ router.post('/', function (req, res) {
             var trait4 = big5.children[4].percentage;
             var sum = trait0 + trait1 + trait2 + trait3 + trait4;
 
+            if (sum == 0.0) sum = 1.0;
             trait0 = Math.round((trait0 / sum) * 100);
             trait1 = Math.round((trait1 / sum) * 100);
             trait2 = Math.round((trait2 / sum) * 100);
