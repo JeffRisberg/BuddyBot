@@ -1,12 +1,13 @@
 <div class="container">
 
-    <h2>Hello, {{username}}</h2>
-
-    <h2>Please tell us about yourself:</h2>
-
+    <p class="robot-big">
+        <img src="images/bot.png" alt="Buddy Bot" height="65" width="135"/>
+        Welcome, {{username}}!
+    </p>
+   
     <form action="/analyze" method="post">
 
-        <p>Select some favorite activities:</p>
+        <p class="robot-small">Pick some activities:</p>
 
         <select name="activities" multiple="true">
             <option>Bike trips</option>
@@ -18,8 +19,8 @@
 
         <p>&nbsp;</p>
         <div class="form-group">
-            <p>Enter some text about your everyday activities and ideas:</p>
-            <textarea name="text" id="inputText" rows="12" cols="90"></textarea>
+            <p class = "robot-small">Your personal bio:</p>
+            <textarea placeholder="at least 200 words" class="form-control input-lg col-md-4 " name="text" id="inputText" rows="12" cols="90"></textarea>
             <br/>
 
             <input type="hidden" name="email" value="{{email}}"/>

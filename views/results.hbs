@@ -22,8 +22,9 @@
         </div>
     {{/each}}
 
-    <p>Word Count Message: {{word_count_message}}</p>
-
+    <p class="robot-small">You have fed this many words to the Buddy-Matic Analyze-o-Tron 9000:  {{word_count_message}}</p>
+    <br>
+   
     <form action="/buddies" method="post">
         <input type="hidden" name="email" value="{{email}}" />
         <input type="hidden" name="username" value="{{username}}" />
