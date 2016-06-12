@@ -28,7 +28,7 @@ var similarity = function (/*object*/ origin, /*object*/ target, type) {
     var distance = 0.0,
         origin_traits = origin.tree.children[type].children[0].children,
         target_traits = target.tree.children[type].children[0].children;
-
+    
     // for each trait in origin personality...
     origin_traits.forEach(function (trait, i) {
         distance += Math.pow(trait.percentage - target_traits[i].percentage, 2);

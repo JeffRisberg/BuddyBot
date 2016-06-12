@@ -5,7 +5,7 @@
         Personality analyzed!
     </p>
 
-    {{#each tree.children}}
+    {{#each watsonResult.tree.children}}
         <div style="margin-left: 20px">
             {{name}}
             <div style="margin-left: 20px">
@@ -22,9 +22,8 @@
         </div>
     {{/each}}
 
-    <p class="robot-small">You have fed this many words to the Buddy-Matic Analyze-o-Tron 9000:  {{word_count_message}}</p>
-    <br>
-   
+    <p class="robot-small">You have fed {{watsonResult.word_count}} words to the Buddy-Matic Analyze-o-Tron 9000</p>
+
     <form action="/buddies" method="post">
         <input type="hidden" name="email" value="{{email}}" />
         <input type="hidden" name="username" value="{{username}}" />

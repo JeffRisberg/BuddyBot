@@ -2,12 +2,14 @@
 
     <p class="robot-med">
         <img src="images/bot.png" alt="Buddy Bot" height="65" width="135"/>
-        Hooray!!! <br> I found you some buddies!
+        Hooray!!!
+        <br/>
+        I found you some buddies!
     </p>
 
     {{#each buddies}}
         <div class="robot-small">
-        <p><input type="checkbox" /> {{username}}</p>
+        <p><input type="checkbox" /> {{profile.username}} (Similarity: {{formatPercentage similarity}}%)</p>
         </div>
     {{/each}}
 
